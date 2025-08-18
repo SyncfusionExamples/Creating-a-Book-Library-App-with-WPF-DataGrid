@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Images\**" />
+    <EmbeddedResource Remove="Images\**" />
+    <None Remove="Images\**" />
+    <Page Remove="Images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="Syncfusion.DataGridExcelExport.Wpf" Version="29.2.4" />
+    <PackageReference Include="Syncfusion.Licensing" Version="29.2.4" />
+    <PackageReference Include="Syncfusion.SfGrid.WPF" Version="29.2.4" />
+    <PackageReference Include="Syncfusion.SfInput.WPF" Version="29.2.4" />
+    <PackageReference Include="Syncfusion.SfNavigationDrawer.WPF" Version="29.2.4" />
+    <PackageReference Include="Syncfusion.SfSkinManager.WPF" Version="29.2.4" />
+    <PackageReference Include="Syncfusion.Themes.Windows11Dark.WPF" Version="29.2.4" />
+    <PackageReference Include="Syncfusion.Themes.Windows11Light.WPF" Version="29.2.4" />
+  </ItemGroup>
+
+</Project>

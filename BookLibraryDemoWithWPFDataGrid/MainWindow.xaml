@@ -1,0 +1,94 @@
+<Window x:Class="BookLibraryDemoWithWPFDataGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookLibraryDemoWithWPFDataGrid"
+        mc:Ignorable="d"
+        xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"        
+        xmlns:behavior="http://schemas.microsoft.com/xaml/behaviors"
+        Title="MainWindow" Height="600" Width="925"
+        syncfusionskin:SfSkinManager.Theme="{syncfusionskin:SkinManagerExtension ThemeName=Windows11Dark}">
+    <Window.DataContext>
+        <local:LibraryViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+         
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="8">
+                <syncfusion:SfTextBoxExt x:Name="SearchBox" Width="200" Height="28" Watermark="Search here.."  VerticalAlignment="Center" Margin="20,0,8,0"/>
+               <!--<Button x:Name="searchButton" Content="Search" Width="75"  Margin="0,0,8,0"/>-->
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Margin="8">
+                <CheckBox x:Name="allowFilteringCheckBox" Content="Allow Filtering" Margin="20,0,8,0"/>
+                <CheckBox x:Name="allowCaseSensitiveCheckBox" Content="Allow Case Sensitive" Margin="0,0,8,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical"  Grid.Column="1" Grid.RowSpan="3" Margin="8">
+                <Button x:Name="exportToExcelButton" Content="ExportToExcel" Margin="0,0,8,0" Height="30" Width="150" />
+                <Button x:Name="exportToPDFButton" Content="ExportToPDF"  Margin="0,8,8,0" Height="30" Width="150" />
+             </StackPanel>
+            <StackPanel Orientation="Horizontal"  Grid.Column="0" Grid.Row="2" Margin="8">
+                <Button x:Name="editButton" Content="Edit Book" Margin="20,0,8,0" Width="150" Height="30" />
+                <Button x:Name="deleteButton" Content="Delete Book"  Margin="0,0,8,0" Width="150" Height="30" />
+            </StackPanel>
+        </Grid>
+            
+       
+        <syncfusion:SfNavigationDrawer x:Name="navigationDrawer"  DisplayMode="Expanded" ExpandedModeWidth="120" Grid.Row="1">
+            <syncfusion:NavigationItem Header="All">               
+            </syncfusion:NavigationItem>
+            <syncfusion:NavigationItem Header="Adventure" />
+            <syncfusion:NavigationItem Header="Fantasy"/>
+            <syncfusion:NavigationItem Header="Historical"/>
+            <syncfusion:NavigationItem Header="Realist"/>
+            <syncfusion:NavigationItem Header="Surrealist"/>
+            <syncfusion:NavigationItem Header="Gothic"/>
+            <syncfusion:NavigationItem Header="Philosophical"/>
+            <syncfusion:NavigationItem Header="Science Fiction"/>
+            <syncfusion:SfNavigationDrawer.ContentView>
+                <syncfusion:SfDataGrid  x:Name="dataGrid"
+                                        AutoGenerateColumns="False"
+                                        ShowRowHeader="True"
+                                        AddNewRowPosition="FixedTop"
+                                        AddNewRowText="Add new book here.."
+                                        NewItemPlaceholderPosition="AtBeginning"
+                                        AllowFiltering="True"
+                                        AllowEditing="True"
+                                        AllowDeleting="True"
+                                        ColumnSizer="Auto"
+                                        SelectedIndex="1"                                      
+                                        Margin="5"
+                                        Grid.Row="1"
+                                        ItemsSource="{Binding Books}">
+                    <syncfusion:SfDataGrid.Columns>
+                        <syncfusion:GridTextColumn HeaderText="Book Name" MappingName="BookName" />
+                        <syncfusion:GridTextColumn HeaderText="Author Name" MappingName="AuthorName" />
+                        <syncfusion:GridTextColumn HeaderText="Genre" MappingName="Genre" />
+                        <!--<syncfusion:GridTextColumn HeaderText="Published Year" MappingName="PublishedYear" />-->
+                        <syncfusion:GridCheckBoxColumn HeaderText="Is Available" MappingName="IsAvailable" AllowEditing="True"/>
+                        <syncfusion:GridTextColumn HeaderText="Return Timeline" MappingName="ReturnTimeline" />
+                    </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </syncfusion:SfNavigationDrawer.ContentView>
+        </syncfusion:SfNavigationDrawer>
+       
+    </Grid>
+    <behavior:Interaction.Behaviors>
+        <local:MainWindowBehavior/>
+    </behavior:Interaction.Behaviors>
+</Window>
