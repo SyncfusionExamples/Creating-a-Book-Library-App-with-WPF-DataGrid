@@ -1,18 +1,43 @@
-# Creating-a-Book-Library-App-with-WPF-DataGrid
-## Overview 
+# Creating a Book Library App with WPF DataGrid
 
-In this blog, we’ll explore how to build a Book Library App using WPF (Windows Presentation Foundation), leveraging the MVVM architecture and Syncfusion’s rich UI controls to create a seamless user experience. 
+This sample demonstrates how to build a Book Library App using WPF and Syncfusion’s WPF DataGrid control. The application follows the MVVM design pattern and provides a user-friendly interface for managing a digital book collection.
 
-Our goal is to design an intuitive interface where users can: 
+## Overview
 
-View and manage a list of books 
+The Book Library App allows users to:
 
-Search, edit, and delete entries 
+- View and manage a list of books
+- Search for books by name or other data
+- Add, edit, and delete book records
+- Filter books by genre using a navigation drawer
+- Export the collection to Excel or PDF
+- Toggle filtering and case-sensitive search behavior
 
-Filter books by genre using a navigation drawer 
+The application uses the Syncfusion `SfDataGrid`, `SfNavigationDrawer`, and WPF layout features to create a modern, interactive library management UI.
 
-Export the collection to Excel or PDF 
+## Features
 
-At the heart of this app is the SfDataGrid, a versatile control that allows dynamic data presentation and manipulation. Combined with WPF’s layout system and data binding capabilities, we’ll create a responsive and maintainable application that’s ideal for managing any kind of collection. 
+- MVVM-based architecture
+- Search box for quick filtering
+- Editable data grid for book records
+- Add and delete operations
+- Genre-based navigation drawer
+- Excel export support
+- PDF export support
+- Syncfusion WPF theme support
 
-Whether you're building a personal library manager or a scalable enterprise tool, this walkthrough will give you the foundation to extend and customize your app with ease. 
+## Project Structure
+
+```text
+BookLibraryDemoWithWPFDataGrid/
+├── App.xaml
+├── App.xaml.cs
+├── AssemblyInfo.cs
+├── Behavior.cs
+├── BookLibraryDemoWithWPFDataGrid.csproj
+├── BookLibraryDemoWithWPFDataGrid.sln
+├── MainWindow.xaml
+├── MainWindow.xaml.cs
+├── Model.cs
+├── ViewModel.cs
+└── README.md
