@@ -1,6 +1,6 @@
-# Creating a Book Library App with WPF DataGrid
+# Creating a Book Library App with WPF Data Grid
 
-This sample demonstrates how to build a Book Library App using WPF and Syncfusion’s WPF DataGrid control. The application follows the MVVM design pattern and provides a user-friendly interface for managing a digital book collection.
+This sample demonstrates how to build a Book Library App using WPF and Syncfusion’s WPF Data Grid control. The application follows the MVVM design pattern and provides a user-friendly interface for managing a digital book collection.
 
 ## Overview
 
@@ -13,7 +13,7 @@ The Book Library App allows users to:
 - Export the collection to Excel or PDF
 - Toggle filtering and case-sensitive search behavior
 
-The application uses the Syncfusion `SfDataGrid`, `SfNavigationDrawer`, and WPF layout features to create a modern, interactive library management UI.
+The application uses the Syncfusion `WPF Data Grid`, `SfNavigationDrawer`, and WPF layout features to create a modern, interactive library management UI.
 
 ## Features
 
